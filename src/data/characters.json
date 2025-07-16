@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nome": "Rute",
+        "titulo": "",
+        "localizacao": "Moabe - Leste do Mar Morto",
+        "descricao": "Rute é uma mulher moabita que se tornou parte da linhagem de Davi e, consequentemente, de Jesus. Sua história é um exemplo de lealdade e fé.",
+        "livro": "Rute 1:16-17",
+        "imagem": "./public/images/rute.png"
+    },
+    {
+        "id": 2,
+        "nome": "Davi",
+        "titulo": "Rei de Israel",
+        "localizacao": "Israel - Belém",
+        "descricao": "Davi é conhecido como o homem segundo o coração de Deus. Ele foi o segundo rei de Israel e é famoso por derrotar Golias.",
+        "livro": "1 Samuel 16:13",
+        "imagem": "./public/images/davi.jpg"
+    }
+]
