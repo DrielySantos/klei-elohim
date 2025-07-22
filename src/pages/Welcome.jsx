@@ -6,8 +6,10 @@ export default function Welcome() {
 
   return (
     <PageWrapper>
-      <div className="h-[100dvh] w-full flex flex-col justify-center items-center bg-gradient-to-b from-[#f8ecd6] to-[#f5d7b2] text-center overflow-hidden px-6">
-        <div className="w-full max-w-[412px] h-[915px] mx-auto flex flex-col items-center justify-center px-6 text-center">
+      {/* Adicionadas classes `dark:` para o gradiente e para o texto */}
+      {/* SUGESTÃO: Simplificamos a estrutura removendo um div aninhado e a altura fixa. */}
+      <div className="h-[100dvh] w-full flex flex-col justify-center items-center bg-gradient-to-b from-[#f8ecd6] to-[#f5d7b2] dark:from-zinc-900 dark:to-zinc-800 text-center p-6">
+        <div className="w-full max-w-md flex flex-col items-center">
           <img
             src="/capa-ke-removebg-preview.png"
             alt="Klei Elohim Logo"
@@ -15,7 +17,7 @@ export default function Welcome() {
             // className="w-24 h-auto mb-4"
           />
 
-          <p className="text-[#5c4a31] text-base font-medium max-w-xs mt-4 mb-10 leading-relaxed">
+          <p className="text-[#5c4a31] dark:text-zinc-300 text-base font-medium max-w-xs mt-4 mb-10 leading-relaxed">
             Descubra a transformação de personagens bíblicos em uma jornada com Deus.
           </p>
 
@@ -32,4 +34,3 @@ export default function Welcome() {
     </PageWrapper>
   );
 }
-

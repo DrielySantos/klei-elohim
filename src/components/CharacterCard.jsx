@@ -10,20 +10,20 @@ function CharacterCard({ character }) {
     }
 
   return (
-    <div className="w-full max-w-[380px] h-[85vh] object-cover rounded-[30px] overflow-hidden relative shadow-lg bg-gray-100">
+    <div className="bg-white dark:bg-gray-800 relative rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
       <img
         src={character.imagem}
         alt={character.nome}
-        className="w-full h-[800px] object-cover"
+        className="w-full h-[800px] object-cover border-gray-200 dark:border-zinc-700"
       />
 
       <div className="absolute top-0 left-0 w-full h-full p-4 bg-gradient-to-b from-black/40 to-black/10 text-white flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-2xl">✅</span>
-            <h2 className="text-xl font-bold">{character.nome}</h2>
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-4">{character.nome}</h2>
           </div>
-          <p className="text-sm text-gray-200 leading-snug">
+          <p className="text-zinc-600 dark:text-zinc-400 mt-1">
             Livro Bíblico: {character.livro} <br />
             {character.localizacao}
           </p>
