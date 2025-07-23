@@ -7,29 +7,25 @@ import "swiper/css/navigation";
 
 function Cards() {
   return (
-    // Removido min-h-screen e bg-[#dbd0c6] para herdar do AppLayout
-    <div className="flex flex-col items-center justify-center p-4">
-      <div className="w-full flex justify-between items-center mb-4 max-w-xs">
-        
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={{
-            nextEl: "btn-next",
-            prevEl: "btn-prev",
-          }}
-          loop
-          className="w-full max-w-[380]"
-        >
-          {characters.map((character) => (
-            <SwiperSlide key={character.id}>
-              <CharacterCard character={character} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
+  
+    <div className="flex flex-col items-center justify-center w-full px-4">
+  <div className="w-full max-w-6xl">
+    <Swiper
+      modules={[Navigation]}
+      spaceBetween={30}
+      slidesPerView={1}
+      loop
+      className="w-full"
+    >
+      {characters.map((character) => (
+        <SwiperSlide key={character.id} className="flex justify-center">
+          <CharacterCard character={character} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</div>
+
   );
 }
 

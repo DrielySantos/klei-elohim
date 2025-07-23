@@ -1,8 +1,6 @@
-// import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function CharacterCard({ character }) {
-    // const [mostrarDetalhes, setMostrarDetalhes] = useState(false)
     const navigate = useNavigate();
 
     const verDetalhes = () =>{
@@ -10,11 +8,11 @@ function CharacterCard({ character }) {
     }
 
   return (
-    <div className="bg-white dark:bg-gray-800 relative rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+    <div className="w-full max-w-[600px] h-auto bg-white dark:bg-gray-800 relative rounded-lg overflow-hidden shadow-lg">
       <img
         src={character.imagem}
         alt={character.nome}
-        className="w-full h-[800px] object-cover border-gray-200 dark:border-zinc-700"
+        className="w-full max-h-[848px] object-cover"
       />
 
       <div className="absolute top-0 left-0 w-full h-full p-4 bg-gradient-to-b from-black/40 to-black/10 text-white flex flex-col justify-between">
