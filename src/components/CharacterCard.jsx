@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, Heart } from 'lucide-react';
+import { ChevronLeft, Flame, Heart } from 'lucide-react';
+import Button from './Button'; // Importando o componente Button
 
 function CharacterCard({ character }) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const verDetalhes = () =>{
-        navigate(`/character/${character.id}`, { state: { character } });
-    }
+  const verDetalhes = () => {
+    navigate(`/character/${character.id}`, { state: { character } });
+  };
 
-    const voltarCard = () => {
-      console.log("Voltar ao card anterior");
-    }
+  const voltarCard = () => {
+    console.log("Voltar ao card anterior");
+  };
 
   return (
     <div className="w-full max-w-[600px] h-auto bg-white dark:bg-gray-800 relative rounded-lg overflow-hidden shadow-lg">
@@ -24,30 +25,35 @@ function CharacterCard({ character }) {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-2xl">✅</span>
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-4">{character.nome}</h2>
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-4">
+              {character.nome}
+            </h2>
           </div>
           <p className="text-zinc-600 dark:text-zinc-400 mt-1">
             Livro Bíblico: {character.livro} <br />
             {character.localizacao}
           </p>
         </div>
-        
+
         <div className="flex justify-center gap-8 mt-4">
-          <button 
-            className="bg-white/20 hover:bg-white/30 backdrop-blur-md p-4 rounded-full shadow-lg"
+          <Button
+            icon={<ChevronLeft className="w-6 h-6 text-yellow-500" />}
             onClick={voltarCard}
-          >
-            <ChevronLeft className="text-white w-6 h-6" />
-          </button>
+            label="Voltar"
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white"
+          />
 
-          <button
-            className="bg-white/20 hover:bg-white/30 backdrop-blur-md p-4 rounded-full shadow-lg"
+          <Button
+            icon={<Heart className="w-6 h-6 text-red-600" />}
             onClick={verDetalhes}
-          >
-            <Heart className="text-white w-6 h-6" />
-          </button>
-        </div>
+            label="Ver detalhes"
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white"
+          />
 
+          {/* <Button 
+            icon={<Flame className="w-6 h-6" />}
+          /> */}
+        </div>
       </div>
     </div>
   );
