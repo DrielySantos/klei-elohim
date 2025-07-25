@@ -1,10 +1,15 @@
 import { useNavigate } from 'react-router-dom';
+import { ChevronLeft, Heart } from 'lucide-react';
 
 function CharacterCard({ character }) {
     const navigate = useNavigate();
 
     const verDetalhes = () =>{
         navigate(`/character/${character.id}`, { state: { character } });
+    }
+
+    const voltarCard = () => {
+      console.log("Voltar ao card anterior");
     }
 
   return (
@@ -27,12 +32,21 @@ function CharacterCard({ character }) {
           </p>
         </div>
         
-        <button 
-          onClick={verDetalhes}
-          className="mt-4 bg-white/20 p-2 rounded text-sm text-white"
-        >
-            ❤️
-        </button>
+        <div className="flex justify-center gap-8 mt-4">
+          <button 
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-md p-4 rounded-full shadow-lg"
+            onClick={voltarCard}
+          >
+            <ChevronLeft className="text-white w-6 h-6" />
+          </button>
+
+          <button
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-md p-4 rounded-full shadow-lg"
+            onClick={verDetalhes}
+          >
+            <Heart className="text-white w-6 h-6" />
+          </button>
+        </div>
 
       </div>
     </div>
