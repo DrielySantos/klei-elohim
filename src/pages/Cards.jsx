@@ -4,28 +4,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Header from "../components/Header";
 
 function Cards() {
   return (
-  
-    <div className="flex flex-col items-center justify-center w-full px-4">
-      <div className="w-full max-w-6xl">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={false}
-          allowTouchMove={true}
-          className="w-full"
-        >
-          {characters.map((character) => (
-            <SwiperSlide key={character.id} className="flex justify-center">
-              <CharacterCard character={character} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <>
+      <Header />
+      <div className="flex flex-col items-center justify-center w-full px-4">
+        <div className="w-full max-w-6xl">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={false}
+            allowTouchMove={true}
+            className="w-full"
+          >
+            {characters.map((character) => (
+              <SwiperSlide key={character.id} className="flex justify-center">
+                <CharacterCard character={character} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
