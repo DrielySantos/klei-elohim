@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, Flame, Heart } from 'lucide-react';
-import Button from './Button'; // Importando o componente Button
+import Button from './Button';
 
 function CharacterCard({ character }) {
   const navigate = useNavigate();
@@ -21,18 +21,31 @@ function CharacterCard({ character }) {
         className="w-full max-h-[848px] object-cover"
       />
 
-      <div className="absolute top-0 left-0 w-full h-full p-4 bg-gradient-to-b from-black/40 to-black/10 text-white flex flex-col justify-between">
+      <div className="absolute top-0 left-0 w-full h-full p-4 bg-gradient-to-t from-black/70 to-transparent text-white flex flex-col justify-end">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-2xl">✅</span>
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-4">
+            <h2 className="text-xl font-bold mt-4">
               {character.nome}
             </h2>
           </div>
-          <p className="text-zinc-600 dark:text-zinc-400 mt-1">
+          <p className="mt-1">
             Livro Bíblico: {character.livro} <br />
             {character.localizacao}
           </p>
+
+          <div className="flex flex-wrap gap-2 mt-4">
+            {character.qualidade.map((qualidade, index) => (
+              <span key={index} 
+                    className={`px-3 py-1 rounded-full text-sm font-medium 
+                  ${qualidade === character.qualidade[0] 
+                    ? 'bg-red-500 text-white' 
+                    : 'bg-gray-400 text-white'}`}
+              >
+                {qualidade}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="flex justify-center gap-8 mt-4">
